@@ -1,4 +1,7 @@
 .Layout {
-  background: gold;
-  border: aqua;
+  position: relative;
+
+  &__right-box {
+    float: right;
+  }
 }

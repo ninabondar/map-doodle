@@ -1,0 +1,51 @@
+@import "../../styles/variables";
+
+.SearchPanel {
+  display: flex;
+  height: $SEARCH_HEIGHT;
+  padding: 10px 12px;
+  border-bottom: 1px solid $BORDER_GRAY;
+
+  &__search-container {
+    display: inherit;
+    position: relative;
+    outline: none;
+    width: 180px;
+
+    &::after {
+      content: url("../../assets/search.svg");
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 8px;
+    }
+
+    &:hover {
+      &::after {
+        content: url("../../assets/search_active.svg");
+      }
+    }
+  }
+
+  &__search-field {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 4px 6px 3px;
+    border-radius: $BORDER_RADIUS;
+    border: solid 1px $BORDER_GRAY;
+    color: $FONT_DARK;
+
+    &::placeholder {
+      color: $BORDER_GRAY;
+    }
+  }
+
+  &__search-btn {
+    cursor: pointer;
+    outline: 0;
+    margin-left: 14px;
+    @include Button($BLUE);
+  }
+}

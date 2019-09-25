@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+
+/* COLOR SCHEME */
+$BORDER_GRAY: #ebebeb;
+$BLUE: #16b8f7;
+$FONT_WHITE: #ffffff;
+$FONT_DARK: #181818;
+$PINK: #ee5f7b;
+
+/* DIMENSIONS */
+$BORDER_RADIUS: 3px;
+$FONT_GENERAL_SIZE: 12px;
+$FONT_FAM: "Muli", sans-serif;
+$SEARCH_HEIGHT: 50px;
+
+/*MIXINS*/
+@mixin Button($COLOR) {
+  border: 0;
+  border-radius: $BORDER_RADIUS;
+  letter-spacing: 0.6px;
+  background: $COLOR;
+  color: $FONT_WHITE;
+  font-size: $FONT_GENERAL_SIZE;
+  padding: 8px 14px;
+}
+
+@mixin centeredAbsolutely {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+}
