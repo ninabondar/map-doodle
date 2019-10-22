@@ -1,5 +1,5 @@
 import React from "react";
-import { Map, GoogleApiWrapper } from "google-maps-react";
+import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
 import config from "../../config";
 
 import "./Mabpox.scss";
@@ -12,20 +12,26 @@ const styles = {
   height: "inherit"
 };
 
-const Mapbox = centerCoords => {
+const Mapbox = ({ centerCoords }) => {
   return (
     <div className={b()}>
       <Map
         google={window.google}
-        zoom={8}
+        zoom={6}
         style={styles}
-        initialCenter={{ lat: 48, lng: 31 }}
-      />
+        initialCenter={centerCoords}
+      >
+        <Marker position={centerCoords} />
+      </Map>
       <div className={b("navigation")}>
         <span />
       </div>
     </div>
   );
+};
+
+Mapbox.defaultProps = {
+  centerCoords: { lat: 48, lng: 31 }
 };
 
 export default GoogleApiWrapper(props => ({
